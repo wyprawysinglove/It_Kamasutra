@@ -2,7 +2,7 @@ import React from 'react';
 import s from './navbar.module.css'
 
 const Navbar=()=>{
-  console.log(s)
+  //console.log(s)
     return (
       <nav className={s.nav}>
       <div className={s.item}>
