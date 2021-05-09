@@ -18,3 +18,7 @@
     font-size: 25px;
     color: #fff;
 }
+.item.active{
+    font-size: 25px;
+    color: rgb(212, 33, 33);
+}
