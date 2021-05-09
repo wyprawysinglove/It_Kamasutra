@@ -4,8 +4,7 @@ import s from './profile.module.css'
 
 const Profile = () => {
   return (
-    <div className={s.content}>
-      Main content
+    <div >
       <div className={s.headPict}>
         <div className={s.picture}></div>
       </div>
