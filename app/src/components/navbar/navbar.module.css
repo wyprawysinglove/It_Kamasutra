@@ -2,9 +2,15 @@
 .nav{
     grid-area: n;
     background: rgb(26, 118, 194);
+    padding: 20px;
 }
 .item a{
     color: #fff;
+    text-decoration: none;
+    font-size: 30px;
+}
+.item a.active{
+    color: rgb(180, 20, 20);
     text-decoration: none;
     font-size: 30px;
 }
