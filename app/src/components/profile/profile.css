@@ -1,0 +1,16 @@
+
+.content{
+    grid-area: c;
+    background: rgb(19, 93, 190);
+}
+.content .headPict{
+    background-color: #fff;
+}
+.content div .picture{
+    background-image: url(../../img/yoga_wide.jpg);
+    height: 300px;
+    max-width:725px ;
+    margin: auto;
+    background-size:cover;
+    background-position: center;
+}
