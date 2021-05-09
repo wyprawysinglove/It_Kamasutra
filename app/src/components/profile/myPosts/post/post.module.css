@@ -1,0 +1,17 @@
+
+
+.item{
+    font-size: 25px;
+    color: #fff;
+}
+.item div{
+    display:inline-block;
+}
+.item img{
+    width: 50px;
+    
+}
+.item.active{
+    font-size: 25px;
+    color: rgb(212, 33, 33);
+}
