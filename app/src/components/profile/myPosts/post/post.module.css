@@ -9,7 +9,7 @@
 }
 .item img{
     width: 50px;
-    
+    margin-right: 10px;
 }
 .item.active{
     font-size: 25px;

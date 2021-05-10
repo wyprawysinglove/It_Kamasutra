@@ -1,0 +1,15 @@
+
+.headPict{
+    background-color: #fff;
+}
+.picture{
+    background-image: url(../../../img/yoga_wide.jpg);
+    height: 300px;
+    max-width:725px ;
+    margin: auto;
+    background-size:cover;
+    background-position: center;
+}
+.description{
+    padding: 10px;
+}

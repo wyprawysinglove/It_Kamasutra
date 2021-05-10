@@ -1,21 +1,3 @@
 
 
-.headPict{
-    background-color: #fff;
-}
-.picture{
-    background-image: url(../../img/yoga_wide.jpg);
-    height: 300px;
-    max-width:725px ;
-    margin: auto;
-    background-size:cover;
-    background-position: center;
-}
-.item{
-    font-size: 25px;
-    color: #fff;
-}
-.item.active{
-    font-size: 25px;
-    color: rgb(212, 33, 33);
-}
+
