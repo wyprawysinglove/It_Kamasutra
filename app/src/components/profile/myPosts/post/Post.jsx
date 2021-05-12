@@ -8,7 +8,8 @@ const Post = (props) => {
   return (
     <div className={postClass}>
       <img src='https://image.flaticon.com/icons/png/512/194/194938.png' alt='avatar'></img>
-      <div >{props.message}</div>
+      <div >{props.message }</div>
+      <div>...Like:{props.likeCount}</div>
   </div>
   )
 }
