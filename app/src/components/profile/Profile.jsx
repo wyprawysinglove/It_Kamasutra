@@ -1,13 +1,14 @@
 import React from 'react';
 import MyPosts from './myPosts/MyPosts';
-import s from './profile.module.css'
+//import s from './profile.module.css'
 import ProfileInfo from './profileInfo/ProfileInfo';
 
 const Profile = (props) => {
+  //debugger;
   return (
     <div >
       <ProfileInfo></ProfileInfo>
-      <MyPosts posts={props.posts}></MyPosts>
+      <MyPosts posts={props.state.posts}></MyPosts>
       
     </div>
   )
