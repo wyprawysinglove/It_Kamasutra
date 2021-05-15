@@ -3,12 +3,18 @@ import s from './myPosts.module.css'
 import Post from './post/Post';
 
 const MyPosts = (props) => {
+
+  let newPostElement=React.createRef()
+  let addPost=()=>{
+    let text=newPostElement.current.value
+    console.log(text)
+  }
   
   return (
     <div className={s.postBlock}>My post
         <div>
-          <textarea></textarea>
-          <button>Add post</button>
+          <textarea  ref={newPostElement}></textarea>
+          <button onClick={addPost}>Add post</button>
         </div>
         <div className={s.posts}>
           {/* <Post message='Hallo ! How are you?' aClass={true}></Post>
