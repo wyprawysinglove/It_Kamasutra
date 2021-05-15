@@ -3,13 +3,18 @@ import { renderEntireTree } from "../render"
 
 let state
 
- let addPost=(postMessage)=>{
+ let addPost=()=>{
     let newPost={
         id:state.profilePage.posts.length+1,
-        message:postMessage,
+        message:state.profilePage.newPostText,
         likeCount:22
     }
     state.profilePage.posts.push(newPost)
+    state.profilePage.newPostText=''
+    renderEntireTree(state)
+}
+let updateNewPostText=(newText)=>{
+    state.profilePage.newPostText=newText
     renderEntireTree(state)
 }
 
@@ -19,7 +24,8 @@ let state
         {posts:[
             {id:1, message:'Hallo ! How are you?', likeCount:12},
             {id:2, message:"It's my first post !", likeCount:9}
-        ]},
+        ],
+        newPostText:'it-kamasutra.com'},
     dialogsPage:
         {dialogsData:[
             {id:1, name:'Dimych'},
@@ -35,7 +41,8 @@ let state
             {id:3, message:'Good !'}
         ]},
     functions:{
-        addPost
+        addPost,
+        updateNewPostText
     } 
 }
 
