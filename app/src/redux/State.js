@@ -1,4 +1,4 @@
-import { renderEntireTree } from "../render"
+let renderEntireTree
 
 
 let state
@@ -16,6 +16,10 @@ let state
 let updateNewPostText=(newText)=>{
     state.profilePage.newPostText=newText
     renderEntireTree(state)
+}
+
+export const subscribe=(observer)=>{
+    renderEntireTree=observer
 }
 
 
