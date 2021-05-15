@@ -11,19 +11,17 @@ import Profile from './components/profile/Profile';
 
 const App = (props) => {
   return (
-    <BrowserRouter>
-      <div className='app-wrapper'>
+    <div className='app-wrapper'>
       <Header></Header>
       <Navbar></Navbar>
       <div className='app-wrapper-content'>
           {/* <Route path='/profile' render={()=>{return Profile(props.state.profilePage)}}></Route>
           <Route path='/dialogs' render={()=>{return(Dialogs(props.state.dialogsPage))}}></Route> */}
 
-          <Route path='/profile' render={()=><Profile  state={props.state.profilePage}></Profile>}></Route>
+          <Route path='/profile' render={()=><Profile  state={props.state.profilePage} func={props.state.functions}></Profile>}></Route>
           <Route path='/dialogs' render={()=><Dialogs  state={props.state.dialogsPage}></Dialogs>}></Route>
       </div>
     </div>
-    </BrowserRouter>
   )
 }
 

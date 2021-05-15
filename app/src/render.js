@@ -1,12 +1,20 @@
-//import React from 'react';
-//import ReactDOM from 'react-dom';
+import React from 'react';
+import ReactDOM from 'react-dom';
 import './index.css';
-//import App from './App';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state from './redux/State';
-import { renderEntireTree } from './render';
+//import state from './redux/State';
+import { BrowserRouter } from 'react-router-dom';
 
-renderEntireTree(state)
+export let renderEntireTree=(state)=>{
+  ReactDOM.render(
+    <BrowserRouter>
+        <App state={state} />
+    </BrowserRouter>,
+    document.getElementById('root')
+  );
+}
+
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App dialogsData={dialogsData} messagesData={messagesData} posts={posts} />
