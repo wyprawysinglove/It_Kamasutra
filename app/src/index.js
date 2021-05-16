@@ -3,21 +3,21 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import state, { subscribe } from './redux/State';
+import store from './redux/State';
 import { BrowserRouter } from 'react-router-dom';
 //import { renderEntireTree } from './render';
 
- let renderEntireTree=()=>{
+ let callSubscriber=()=>{
   ReactDOM.render(
     <BrowserRouter>
-        <App state={state} />
+        <App state={store.getState()} addPost={store.addPost.bind(store)} updateNewPostText={store.updateNewPostText.bind(store)}/>
     </BrowserRouter>,
     document.getElementById('root')
   );
 }
 
-renderEntireTree()
-subscribe(renderEntireTree)
+callSubscriber()
+store.subscribe(callSubscriber)
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App dialogsData={dialogsData} messagesData={messagesData} posts={posts} />
