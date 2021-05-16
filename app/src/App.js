@@ -19,7 +19,7 @@ const App = (props) => {
           <Route path='/dialogs' render={()=>{return(Dialogs(props.state.dialogsPage))}}></Route> */}
 
           <Route path='/profile' render={()=><Profile  state={props.state.profilePage} dispatch={props.dispatch} ></Profile>}></Route>
-          <Route path='/dialogs' render={()=><Dialogs  state={props.state.dialogsPage}></Dialogs>}></Route>
+          <Route path='/dialogs' render={()=><Dialogs  state={props.state.dialogsPage} dispatch={props.dispatch}></Dialogs>}></Route>
       </div>
     </div>
   )
