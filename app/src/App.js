@@ -10,6 +10,7 @@ import Profile from './components/profile/Profile';
 
 
 const App = (props) => {
+  //debugger
   return (
     <div className='app-wrapper'>
       <Header></Header>
@@ -18,8 +19,11 @@ const App = (props) => {
           {/* <Route path='/profile' render={()=>{return Profile(props.state.profilePage)}}></Route>
           <Route path='/dialogs' render={()=>{return(Dialogs(props.state.dialogsPage))}}></Route> */}
 
-          <Route path='/profile' render={()=><Profile  state={props.state.profilePage} dispatch={props.dispatch} ></Profile>}></Route>
-          <Route path='/dialogs' render={()=><Dialogs  state={props.state.dialogsPage} dispatch={props.dispatch}></Dialogs>}></Route>
+          <Route path='/profile' render={()=><Profile  state={props.state.ProfileReducer} dispatch={props.dispatch} ></Profile>}></Route>
+          <Route path='/dialogs' render={()=><Dialogs  state={props.state.DialogsReducer} dispatch={props.dispatch}></Dialogs>}></Route>
+
+          {/* <Route path='/profile' render={()=><Profile  state={props.state.profilePage} dispatch={props.dispatch} ></Profile>}></Route>
+          <Route path='/dialogs' render={()=><Dialogs  state={props.state.dialogsPage} dispatch={props.dispatch}></Dialogs>}></Route> */}
       </div>
     </div>
   )

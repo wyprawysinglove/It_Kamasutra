@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/State';
+import store from './redux/ReduxStore';
 import { BrowserRouter } from 'react-router-dom';
 //import { renderEntireTree } from './render';
 
- let callSubscriber=()=>{
+ let renderEntireTree=()=>{
   ReactDOM.render(
     <BrowserRouter>
         <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
@@ -16,8 +16,11 @@ import { BrowserRouter } from 'react-router-dom';
   );
 }
 
-callSubscriber()
-store.subscribe(callSubscriber)
+renderEntireTree()
+store.subscribe(()=>{
+  let state=store.getState();
+  renderEntireTree(state)
+})
 // ReactDOM.render(
 //   <React.StrictMode>
 //     <App dialogsData={dialogsData} messagesData={messagesData} posts={posts} />
