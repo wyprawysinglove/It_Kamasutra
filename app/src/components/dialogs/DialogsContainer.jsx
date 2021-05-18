@@ -19,7 +19,8 @@ const DialogsContainer=(props)=>{
         <Dialogs updateNewMessageBody={onNewMessageChange}
                 sendMessage={onSendMessageClick}
                 dialogsData={state.DialogsReducer.dialogsData}
-                messagesData={state.DialogsReducer.messagesData}>
+                messagesData={state.DialogsReducer.messagesData}
+                newMessageBody={state.DialogsReducer.newMessageBody}>
         </Dialogs>
     )
 }

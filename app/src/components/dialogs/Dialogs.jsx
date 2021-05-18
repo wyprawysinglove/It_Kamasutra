@@ -9,6 +9,7 @@ const Dialogs=(props)=>{
     let dialogsElements=props.dialogsData.map(el=><DialogItem key={el.id} name={el.name}></DialogItem>);
     let messageElements=props.messagesData.map(el=><Message key={el.id} message={el.message}></Message>)
     let newMessageBody=props.newMessageBody
+    
     let onSendMessageClick=()=>{
         props.sendMessage()
     }
