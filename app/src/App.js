@@ -2,7 +2,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
-import Dialogs from './components/dialogs/Dialogs';
+//import Dialogs from './components/dialogs/Dialogs';
+import DialogsContainer from './components/dialogs/DialogsContainer';
 import Header from './components/header/Header';
 import Navbar from './components/navbar/Navbar';
 import Profile from './components/profile/Profile';
@@ -16,14 +17,12 @@ const App = (props) => {
       <Header></Header>
       <Navbar></Navbar>
       <div className='app-wrapper-content'>
-          {/* <Route path='/profile' render={()=>{return Profile(props.state.profilePage)}}></Route>
-          <Route path='/dialogs' render={()=>{return(Dialogs(props.state.dialogsPage))}}></Route> */}
 
-          <Route path='/profile' render={()=><Profile  state={props.state.ProfileReducer} dispatch={props.dispatch} ></Profile>}></Route>
-          <Route path='/dialogs' render={()=><Dialogs  state={props.state.DialogsReducer} dispatch={props.dispatch}></Dialogs>}></Route>
+          <Route path='/profile' render={()=><Profile  store={props.store} ></Profile>}></Route>
+          {/* <Route path='/profile' render={()=><Profile  state={props.state.ProfileReducer} dispatch={props.dispatch} ></Profile>}></Route> */}
+          <Route path='/dialogs' render={()=><DialogsContainer  store={props.store}></DialogsContainer>}></Route>
+          {/* <Route path='/dialogs' render={()=><Dialogs  state={props.state.DialogsReducer} dispatch={props.dispatch}></Dialogs>}></Route> */}
 
-          {/* <Route path='/profile' render={()=><Profile  state={props.state.profilePage} dispatch={props.dispatch} ></Profile>}></Route>
-          <Route path='/dialogs' render={()=><Dialogs  state={props.state.dialogsPage} dispatch={props.dispatch}></Dialogs>}></Route> */}
       </div>
     </div>
   )

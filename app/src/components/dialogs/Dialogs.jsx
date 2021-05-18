@@ -6,15 +6,15 @@ import Message from './message/Message'
 
 const Dialogs=(props)=>{
     //console.log(props)
-    let dialogsElements=props.state.dialogsData.map(el=><DialogItem key={el.id} name={el.name}></DialogItem>);
-    let messageElements=props.state.messagesData.map(el=><Message key={el.id} message={el.message}></Message>)
-    let newMessageBody=props.state.newMessageBody
+    let dialogsElements=props.dialogsData.map(el=><DialogItem key={el.id} name={el.name}></DialogItem>);
+    let messageElements=props.messagesData.map(el=><Message key={el.id} message={el.message}></Message>)
+    let newMessageBody=props.newMessageBody
     let onSendMessageClick=()=>{
-        props.dispatch(sendMessageCreator())
+        props.sendMessage()
     }
     let onNewMessageChange=(e)=>{
         let body=e.target.value
-        props.dispatch(updateNewMessageBodyCreator(body))
+        props.updateNewMessageBody(body)
     }
     return(
         <div className={s.dialogs}> 

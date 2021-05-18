@@ -10,7 +10,8 @@ import { BrowserRouter } from 'react-router-dom';
  let renderEntireTree=()=>{
   ReactDOM.render(
     <BrowserRouter>
-        <App state={store.getState()} dispatch={store.dispatch.bind(store)}/>
+        <App store={store}/>
+        {/* <App state={store.getState()} dispatch={store.dispatch.bind(store)}/> */}
     </BrowserRouter>,
     document.getElementById('root')
   );
@@ -18,8 +19,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 renderEntireTree()
 store.subscribe(()=>{
-  let state=store.getState();
-  renderEntireTree(state)
+  //let state=store.getState();
+  renderEntireTree()
 })
 // ReactDOM.render(
 //   <React.StrictMode>

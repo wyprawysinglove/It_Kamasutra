@@ -1,44 +1,29 @@
 import React from 'react';
-import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/ProfileReducer';
+//import { addPostActionCreator, updateNewPostTextActionCreator } from '../../../redux/ProfileReducer';
 import s from './myPosts.module.css'
 import Post from './post/Post';
 
 const MyPosts = (props) => {
+  //debugger
 
   let newPostElement=React.createRef()
-  // let addPost=()=>{
-  //   let text=newPostElement.current.value
-  //   console.log(text)
-  // }
-  let addPost=()=>{
-    //debugger
-    // let text=newPostElement.current.value
-    // props.func.addPost(text)
-    ////newPostElement.current.value=''
-    //////props.addPost()
-    //////props.dispatch({type:'add_post'})
-    let action=addPostActionCreator()
-    props.dispatch(action)
+
+  let onAddPost=()=>{
+    props.addPost()
   }
 
   let onPostChange=()=>{
     let text=newPostElement.current.value
-    //////props.updateNewPostText(text)
-    //////props.dispatch({type:'update_new_post_text', newText:text})
-    let action=updateNewPostTextActionCreator(text)
-    props.dispatch(action)
+    props.updateNewPostText(text)
   }
   
   return (
     <div className={s.postBlock}>My post
         <div>
           <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}></textarea>
-          <button onClick={addPost}>Add post</button>
+          <button onClick={onAddPost}>Add post</button>
         </div>
         <div className={s.posts}>
-          {/* <Post message='Hallo ! How are you?' aClass={true}></Post>
-          <Post message="It's my first post !"></Post>
-          <Post></Post> */}
           {props.posts.map(el=><Post key={el.id} message={el.message} likeCount={el.likeCount}></Post>)}
         </div>
       </div>
