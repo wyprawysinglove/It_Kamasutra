@@ -4,45 +4,32 @@ import styles from './users.module.css'
 //import * as axios from 'axios'
 import userPhoto from './../../assets/images/user.jpg'
 
-const Users=(props)=>{
-    if (props.users.length===0){
+class Users extends React.Component{
 
+    constructor(props){
+        super(props)
         axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response=>{
-            console.log(response)
-            debugger
-            props.setUsers(response.data.items)
+            // console.log(response)
+            // debugger
+            this.props.setUsers(response.data.items)
         })
-    //     props.setUsers( [
-    //         {
-    //             id: 1,
-    //             photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzzD-Zn-LLm6i5JywQ8KoJFHcSylCwZoXwO2rATahEvE5qP4a_KkbqnZXL_yNILXa1L5o&usqp=CAU',
-    //             followed: true,
-    //             fullName: 'Dmitry',
-    //             status: `I'm a boss`,
-    //             location: { city: 'Minsk', country: 'Belarus' }
-    //         },
-    //         {
-    //             id: 2,
-    //             photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzzD-Zn-LLm6i5JywQ8KoJFHcSylCwZoXwO2rATahEvE5qP4a_KkbqnZXL_yNILXa1L5o&usqp=CAU',
-    //             followed: true,
-    //             fullName: 'Sasha',
-    //             status: `I'm a worker`,
-    //             location: { city: 'Moskow', country: 'Russia' }
-    //         },
-    //         {
-    //             id: 3,
-    //             photoUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzzD-Zn-LLm6i5JywQ8KoJFHcSylCwZoXwO2rATahEvE5qP4a_KkbqnZXL_yNILXa1L5o&usqp=CAU',
-    //             followed: false,
-    //             fullName: 'Andrew',
-    //             status: `I'm a teamleader`,
-    //             location: { city: 'Kiev', country: 'Ukraine' }
-    //         }
-    //     ])
-     }
-    
-    return <div>
+    }
+
+    // getUsers=()=>{
+    //     if (this.props.users.length===0){
+    //         axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response=>{
+    //             // console.log(response)
+    //             // debugger
+    //             this.props.setUsers(response.data.items)
+    //         })
+    //      }
+    // }
+
+    render(){
+        return <div>
+        {/* <button onClick={this.getUsers}>Get Users</button> */}
         {
-            props.users.map((u)=>{
+            this.props.users.map((u)=>{
                 return(
                     <div key={u.id}>
                         <span>
@@ -51,7 +38,7 @@ const Users=(props)=>{
                                 {/* <img src={u.photoUrl} className={styles.userPhoto}></img> */}
                             </div>
                             <div>
-                                {!u.followed?<button onClick={()=>{props.follow(u.id)}}>Follow</button>:<button onClick={()=>{props.unfollow(u.id)}}>Unfollow</button>}
+                                {!u.followed?<button onClick={()=>{this.props.follow(u.id)}}>Follow</button>:<button onClick={()=>{this.props.unfollow(u.id)}}>Unfollow</button>}
                             </div>
                         </span>
                         <span>
@@ -70,6 +57,8 @@ const Users=(props)=>{
             })
         }
     </div>
+    }
 }
+
 
 export default Users
