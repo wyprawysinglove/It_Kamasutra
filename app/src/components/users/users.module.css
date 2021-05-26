@@ -2,3 +2,13 @@
 .userPhoto{
     width: 100px;
 }
+.selectedPage{
+    font-weight: bold;
+    font-size: 19px;
+}
+.pagenation span{
+    margin: 10px;
+}
+.pagenation span:hover{
+    cursor: pointer;
+}
