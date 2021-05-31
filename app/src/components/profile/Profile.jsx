@@ -8,7 +8,7 @@ const Profile = (props) => {
   //debugger;
   return (
     <div >
-      <ProfileInfo></ProfileInfo>
+      <ProfileInfo profile={props.profile}></ProfileInfo>
       {/* <MyPostsContainer posts={props.state.posts} newPostText={props.state.newPostText} dispatch={props.dispatch}></MyPostsContainer> */}
       <MyPostsContainer store={props.store}></MyPostsContainer>
       
